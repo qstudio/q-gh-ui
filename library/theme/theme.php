@@ -69,56 +69,28 @@ class theme extends \q_ui {
     {
 
         // render engines ##
-        require_once self::get_plugin_path( 'library/theme/controller/javascript.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/css.php' );
+        require_once self::get_plugin_path( 'library/controller/javascript.php' );
+        require_once self::get_plugin_path( 'library/controller/css.php' );
 
         // cookies ##
-        // require_once self::get_plugin_path( 'library/theme/controller/cookie.php' );
+        // require_once self::get_plugin_path( 'library/controller/cookie.php' );
         
         // minify ##
-        require_once self::get_plugin_path( 'library/theme/controller/minifier.php' );
+        require_once self::get_plugin_path( 'library/controller/minifier.php' );
 
         // UI controllers ##
-        // require_once self::get_plugin_path( 'library/theme/controller/navigation.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/generic.php' );
+        // require_once self::get_plugin_path( 'library/controller/navigation.php' );
+        require_once self::get_plugin_path( 'library/controller/generic.php' );
 
         // UI / JS / AJAX features ##
-        require_once self::get_plugin_path( 'library/theme/controller/modal.php' );
-        // require_once self::get_plugin_path( 'library/theme/controller/select.php' );
-        // require_once self::get_plugin_path( 'library/theme/controller/scroll.php' );
-        // require_once self::get_plugin_path( 'library/theme/controller/push.php' );
-        // require_once self::get_plugin_path( 'library/theme/controller/tab.php' );
-        // require_once self::get_plugin_path( 'library/theme/controller/filter.php' );
-        // require_once self::get_plugin_path( 'library/theme/controller/toggle.php' );
-        // require_once self::get_plugin_path( 'library/theme/controller/load.php' );
-
-        // global views ##
-        // require_once self::get_plugin_path( 'library/theme/view/landing.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/comment.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/404.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/search.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/post.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/page.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/blank.php' );
-        
-        // templates ---- 
-
-        // front page ##
-        // require_once self::get_plugin_path( 'library/theme/view/frontpage.php' );
-        
-        // programs ##
-        // require_once self::get_plugin_path( 'library/theme/view/program.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/taxonomy-what.php' );
-
-        // campaigns ##
-        // require_once self::get_plugin_path( 'library/theme/view/campaign.php' );
-
-        // contact ##
-        // require_once self::get_plugin_path( 'library/theme/view/contact.php' );
-
-        // blog ##
-        // require_once self::get_plugin_path( 'library/theme/view/archive.php' );
-        // require_once self::get_plugin_path( 'library/theme/view/index.php' );
+        require_once self::get_plugin_path( 'library/controller/modal.php' );
+        // require_once self::get_plugin_path( 'library/controller/select.php' );
+        // require_once self::get_plugin_path( 'library/controller/scroll.php' );
+        // require_once self::get_plugin_path( 'library/controller/push.php' );
+        // require_once self::get_plugin_path( 'library/controller/tab.php' );
+        // require_once self::get_plugin_path( 'library/controller/filter.php' );
+        // require_once self::get_plugin_path( 'library/controller/toggle.php' );
+        // require_once self::get_plugin_path( 'library/controller/load.php' );
 
     }
 
@@ -129,14 +101,19 @@ class theme extends \q_ui {
     * include plugin assets
     *
     * @since        0.1.0
+    * @note         This file contrains css / js pushed to files from controllers and is required ##
     * @return       __void
     */
     public static function wp_enqueue_scripts_plugin() {
 
-        #helper::log( self::$options );
-        // @Victor note that this file contrains css pushed to a file from controllers and is required ##
+        // helper::log( self::$options );
 
-        if ( isset( self::$options->plugin_css ) ) {
+        if ( 
+            isset( self::$options->plugin_css ) 
+            && false === self::$debug 
+        ) {
+
+            // helper::log( 'Adding q.theme.css' );
 
             // \wp_register_style( 'q-wordpress-css', helper::get( "theme/css/q.global.css", 'return' ), '', self::$plugin_version, 'all' );
             // \wp_enqueue_style( 'q-wordpress-css' );
@@ -150,6 +127,8 @@ class theme extends \q_ui {
             isset( self::$options->plugin_js ) 
             && false === self::$debug 
         ) {
+
+            // helper::log( 'Adding q.theme.js' );
 
             // add JS ## -- after all dependencies ##
             \wp_enqueue_script( 'q-theme-js', helper::get( "theme/javascript/q.theme.js", 'return' ), array( 'jquery' ), self::$plugin_version );
@@ -167,6 +146,8 @@ class theme extends \q_ui {
         if ( 
             isset( self::$options->plugin_js ) 
         ) {
+
+            // helper::log( 'Adding q.global.js' );
 
             // add JS ## -- after all dependencies ##
             \wp_enqueue_script( 'q-global-js', helper::get( "theme/javascript/q.global.js", 'return' ), array( 'jquery' ), self::$plugin_version );

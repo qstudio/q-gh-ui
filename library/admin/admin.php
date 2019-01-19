@@ -1,12 +1,12 @@
 <?php
 
-namespace q\q_theme\admin;
-use q\q_theme\core\core as core;
-use q\q_theme\core\helper as helper;
-#use q\q_hours\core\core as q_hours_core;
+namespace q\ui\admin;
+
+use q\ui\core\core as core;
+use q\ui\core\helper as helper;
 
 // load it up ##
-\q\q_theme\admin\admin::run();
+\q\ui\admin\admin::run();
 
 class admin extends \q_ui {
 

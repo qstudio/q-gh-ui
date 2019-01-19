@@ -1,10 +1,10 @@
 <?php
 
-namespace q\q_theme\theme\controller;
+namespace q\ui\controller;
 
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;
-use q\ui\theme\controller\css as css;
+use q\ui\controller\css as css;
 
 // load it up ##
 #\q\q_theme\theme\frontpage::run();

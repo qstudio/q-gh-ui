@@ -2,9 +2,9 @@
 
 namespace q\ui\controller;
 
-use q\q_theme\core\core as core;
-use q\q_theme\core\helper as helper;
-use q\q_theme\core\config as config;
+use q\ui\core\core as core;
+use q\ui\core\helper as helper;
+use q\ui\core\config as config;
 use MatthiasMullie\Minify;
 
 // load it up ##
@@ -16,15 +16,15 @@ class minifier extends \q_ui {
     {
 
         // make sure to update the path to where you cloned the projects to!
-        require_once self::get_plugin_path( 'library/theme/controller/minify/src/Minify.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/minify/src/CSS.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/minify/src/JS.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/minify/src/Exception.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/minify/src/Exceptions/BasicException.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/minify/src/Exceptions/FileImportException.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/minify/src/Exceptions/IOException.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/path-converter/src/ConverterInterface.php' );
-        require_once self::get_plugin_path( 'library/theme/controller/path-converter/src/Converter.php' );
+        require_once self::get_plugin_path( 'library/controller/minify/src/Minify.php' );
+        require_once self::get_plugin_path( 'library/controller/minify/src/CSS.php' );
+        require_once self::get_plugin_path( 'library/controller/minify/src/JS.php' );
+        require_once self::get_plugin_path( 'library/controller/minify/src/Exception.php' );
+        require_once self::get_plugin_path( 'library/controller/minify/src/Exceptions/BasicException.php' );
+        require_once self::get_plugin_path( 'library/controller/minify/src/Exceptions/FileImportException.php' );
+        require_once self::get_plugin_path( 'library/controller/minify/src/Exceptions/IOException.php' );
+        require_once self::get_plugin_path( 'library/controller/path-converter/src/ConverterInterface.php' );
+        require_once self::get_plugin_path( 'library/controller/path-converter/src/Converter.php' );
 
     }
 

@@ -1,24 +1,25 @@
 <?php
 
-namespace q\ui\controller\generic;
+namespace q\ui\controller;
 
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;
 use q\ui\core\config as config;
 use q\q_theme\core\options as options;
-use q\q_theme\theme\template as template; // @todo
-use q\ui\controller\minifier\minifier as minifier;
-use q\ui\controller\css\css as css;
+// use q\q_theme\theme\template as template; // @todo -- what ??
+use q\ui\controller\minifier as minifier;
+use q\ui\controller\css as css;
 
 // load it up ##
 // \q\ui\controller\generic\generic::run();
 
-class generic extends \q_theme {
+class generic extends \q_ui {
 
     public static function run()
     {
 
-        
+        // CORS header ##
+        // \add_action( 'init', [ get_class(), 'add_cors_http_header' ] );
 
     }
 
@@ -509,19 +510,16 @@ class generic extends \q_theme {
 
 
 
-    /**
-     * Return data image element to use for holding images
-     * 
-     * @todo        Review
-     */
-    public static function holder( $string = null ) 
-    {
+    public static function add_cors_http_header(){
 
-        if ( is_null( $string ) ) {
+        // club login status ##
+        if ( core::is_site( "club" ) ) {
 
-            return 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+            return false;
 
         }
+
+        header( "Access-Control-Allow-Origin: ".\get_site_url( '2', '/', 'https' ) );
 
     }
 

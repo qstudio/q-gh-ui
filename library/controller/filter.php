@@ -1,12 +1,12 @@
 <?php
 
-namespace q\ui\theme\controller;
+namespace q\ui\controller;
 
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;
 use q\ui\core\config as config;
-use q\ui\theme\controller\generic as generic;
-use q\ui\theme\controller\javascript as javascript;
+use q\ui\controller\generic as generic;
+use q\ui\controller\javascript as javascript;
 
 // load it up ##
 \q\ui\theme\controller\filter::run();

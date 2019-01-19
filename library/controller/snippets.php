@@ -1,6 +1,6 @@
 <?php
 
-namespace q\ui\theme\controller;
+namespace q\ui\controller;
 
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;

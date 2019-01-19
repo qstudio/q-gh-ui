@@ -1,16 +1,16 @@
 <?php
 
-namespace q\ui\theme\controller\push;
+namespace q\ui\controller\push;
 
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;
 use q\ui\core\config as config;
-use q\ui\theme\controller\generic as generic;
-use q\ui\theme\controller\javascript as javascript;
-use q\ui\theme\controller\css as css;
+use q\ui\controller\generic as generic;
+use q\ui\controller\javascript as javascript;
+use q\ui\controller\css as css;
 
 // load it up ##
-\q\ui\theme\controller\push::run();
+\q\ui\controller\push::run();
 
 class push extends \q_ui {
     

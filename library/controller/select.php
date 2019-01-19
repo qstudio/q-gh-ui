@@ -1,15 +1,15 @@
 <?php
 
-namespace q\ui\theme\controller\select;
+namespace q\ui\controller\select;
 
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;
 use q\ui\core\config as config;
-use q\q_theme\theme\controller\javascript as javascript;
-use q\q_theme\theme\controller\css as css;
+use q\ui\controller\javascript as javascript;
+use q\ui\controller\css as css;
 
 // load it up ##
-\q\q_theme\theme\controller\select::run();
+\q\ui\controller\select::run();
 
 class select extends \q_ui {
     
