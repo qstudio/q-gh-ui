@@ -4,7 +4,7 @@ namespace q\ui\theme;
 
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;
-use q\q_theme\core\options as options;
+use q\ui\core\options as options;
 
 // load it up ##
 \q\ui\theme\theme::run();

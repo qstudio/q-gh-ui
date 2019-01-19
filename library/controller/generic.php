@@ -5,7 +5,7 @@ namespace q\ui\controller;
 use q\ui\core\core as core;
 use q\ui\core\helper as helper;
 use q\ui\core\config as config;
-use q\q_theme\core\options as options;
+// use q\q_theme\core\options as options;
 // use q\q_theme\theme\template as template; // @todo -- what ??
 use q\ui\controller\minifier as minifier;
 use q\ui\controller\css as css;

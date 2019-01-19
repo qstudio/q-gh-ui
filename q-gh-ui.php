@@ -27,8 +27,8 @@ defined( 'ABSPATH' ) OR exit;
 
 if ( ! class_exists( 'q_ui' ) ) {
 
-    // instatiate plugin via WP plugins_loaded - loaded at priority 6 after q_theme ##
-    add_action( 'plugins_loaded', array ( 'q_ui', 'get_instance' ), 6 );
+    // instatiate plugin via WP plugins_loaded - loaded at priority 5 same as q_theme ##
+    add_action( 'plugins_loaded', array ( 'q_ui', 'get_instance' ), 5 );
 
     // define constants ##
 
@@ -216,7 +216,7 @@ if ( ! class_exists( 'q_ui' ) ) {
             if (
                 ! class_exists( 'Q' )
                 || ! class_exists( 'Q_Control' )
-                || ! class_exists( 'q_theme' )
+                // || ! class_exists( 'q_theme' ) // @todo, is this class is required ? ##
             ) {
 
                 helper::log( 'Required dependencies missing, so bulking...' );
@@ -250,10 +250,11 @@ if ( ! class_exists( 'q_ui' ) ) {
             require_once self::get_plugin_path( 'library/core/helper.php' );
             require_once self::get_plugin_path( 'library/core/config.php' );
             require_once self::get_plugin_path( 'library/core/core.php' );
+            require_once self::get_plugin_path( 'library/core/options.php' );
 
             // backend ##
             require_once self::get_plugin_path( 'library/admin/admin.php' );
-            require_once self::get_plugin_path( 'library/admin/menu.php' ); // @todo - this should be filtered via an API into main options page on Q
+            // require_once self::get_plugin_path( 'library/admin/menu.php' ); // @todo - this should be filtered via an API into main options page on Q
 
             // plugins ##
             // require_once self::get_plugin_path( 'library/plugin/plugin.php' );
