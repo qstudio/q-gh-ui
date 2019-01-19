@@ -175,11 +175,11 @@ class generic extends \q_ui {
             ){
 
                 // check if device key exists ##
-                if ( isset( $args->markup[\Q::get_device()] ) ){
+                if ( isset( $args->markup[helper::get_device()] ) ){
 
-                    // helper::log( 'returning markup for device: '.\Q::get_device() );
+                    // helper::log( 'returning markup for device: '.helper::get_device() );
 
-                    $markup = $args->markup[\Q::get_device()];
+                    $markup = $args->markup[helper::get_device()];
 
                 } elseif ( isset( $args->markup['all'] ) ){
 

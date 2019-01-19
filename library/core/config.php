@@ -412,7 +412,7 @@ class config extends \q_ui {
         self::$the_holder = array (
             'the_posts'             => helper::get( "theme/css/images/holder/desktop_the_posts.svg", 'return' ),
             'the_avatar'            => helper::get( "theme/css/images/holder/desktop_the_avatar.svg", 'return' ),
-            'template_header'       => \Q::get_device() == 'desktop' ?
+            'template_header'       => helper::get_device() == 'desktop' ?
                                         helper::get( "theme/css/images/holder/desktop_header.svg", 'return' ) :
                                         helper::get( "theme/css/images/holder/handheld_header.svg", 'return' )
         );
@@ -507,7 +507,7 @@ class config extends \q_ui {
             'sidebar'               => true, // show sidebar ##
             'allow_comments'        => self::$allow_comments, // allow comments ##
             'comments_system'       => 'disqus', // system to use for comments - add styling and links ##
-            'pagination'            => ( \Q::get_device() == 'desktop' ) ? false : true, // next / home / back links ##
+            'pagination'            => ( helper::get_device() == 'desktop' ) ? false : true, // next / home / back links ##
             'gallery'               => self::$allow_gallery, // allow galleries ##
             'gallery_handle'        => 'gallery', // img handle used for returned images ##
             'gallery_open'          => false, // should clicking on the images open them large ##
@@ -679,8 +679,8 @@ class config extends \q_ui {
 
         // the_page ##
         self::$the_page = array(
-            'holder'                => ( \Q::get_device() == 'desktop' ) ? '1440x480' : '1440x480', // holder image ##
-            'handle'                => \Q::get_device_handle().'-single' // image size to use ##
+            'holder'                => ( helper::get_device() == 'desktop' ) ? '1440x480' : '1440x480', // holder image ##
+            'handle'                => helper::get_device().'-single' // image size to use ##
         );
 
         // texts ---------------------------------------------------------------------------------------------------------------

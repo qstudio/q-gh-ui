@@ -24,7 +24,7 @@ class navigation extends \q_ui {
        // if ( ! $array = \Q_Control::get_navigation( $args ) ) { return false; }
 
         // handheld navigation ##
-        #if ( Q::get_device() == 'handheld' ) {
+        #if ( q_ui::get_device() == 'handheld' ) {
 
 ?>
     <div id="the-navigation" class="navigation background-solid-<?php #echo self::get_header_colour()->name; ?>">
@@ -46,7 +46,7 @@ class navigation extends \q_ui {
         }
 
         // handheld navigation ##
-        #if ( Q::get_device() == 'handheld' ) {
+        #if ( q_ui::get_device() == 'handheld' ) {
 
 ?>
         </ul>
@@ -345,7 +345,7 @@ class navigation extends \q_ui {
         }
 
         // mobile wrapper ##
-        if ( 'handheld' == \Q::get_device() ) {
+        if ( 'handheld' == helper::get_device() ) {
 
             // close tag ##
             \Q_Control::get_tag( $args->tag, '', 'close' );

@@ -276,7 +276,10 @@ class helper extends \q_ui {
         if ( self::$device ) { return self::$device; }
 
         // check plugin is active ##
-        if ( function_exists( 'is_plugin_active' ) && ! is_plugin_active( "device-theme-switcher/dts_controller.php" ) ) {
+        if ( 
+            function_exists( 'is_plugin_active' ) 
+            || ! is_plugin_active( "device-theme-switcher/dts_controller.php" ) 
+        ) {
 
             return self::$device = 'desktop'; // defaults to desktop ##
 

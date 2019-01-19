@@ -213,7 +213,7 @@ class tab extends \q_ui {
             ];
 
             // build nav ##
-            $navigation .= generic::markup( $args['markup']['navigation']['row'][\Q::get_device()], $navigation_row );
+            $navigation .= generic::markup( $args['markup']['navigation']['row'][helper::get_device()], $navigation_row );
 
             // build content ##
             $content_row = [
@@ -229,7 +229,7 @@ class tab extends \q_ui {
         }
 
         // compile markup & order ##
-        $string .= str_replace( '%row%', $navigation, $args['markup']['navigation']['wrap'][\Q::get_device()] );
+        $string .= str_replace( '%row%', $navigation, $args['markup']['navigation']['wrap'][helper::get_device()] );
         $string .= str_replace( '%row%', $content, $args['markup']['content']['wrap'] );
 
         // filter complete markup ##
@@ -389,7 +389,7 @@ class tab extends \q_ui {
                 'category_url'  => \esc_html( \get_category_link( \get_the_category( $row['post']->ID )[0]->term_id ) ),
                 'author'        => \esc_html( \get_the_author_meta( 'display_name', \get_post_field ( 'post_author', $row['post']->ID ) ) ),
                 'src'           =>  \has_post_thumbnail( $row['post']->ID ) ? 
-                                    \get_the_post_thumbnail( $row['post']->ID, $args['markup']['blog']['handle'][\Q::get_device()] ) : 
+                                    \get_the_post_thumbnail( $row['post']->ID, $args['markup']['blog']['handle'][helper::get_device()] ) : 
                                     ''
                 // 'hash'       => \sanitize_title_with_dashes( $array['title'] ) // current tab hash ##
             ];

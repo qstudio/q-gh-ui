@@ -186,9 +186,9 @@ class theme extends \q_ui {
             \wp_enqueue_style( 'theme-css' );
 
             // load site/device.css - re: theme/css/q.1.desktop.css
-            // @TODO \Q::get_device() @viktor
-            // $handle = "q.".\get_current_blog_id().".".\Q::get_device().".css";
-            $handle = "q.".\get_current_blog_id().".".\Q::get_device().".css";
+            // @TODO helper::get_device() @viktor
+            // $handle = "q.".\get_current_blog_id().".".helper::get_device().".css";
+            $handle = "q.".\get_current_blog_id().".".helper::get_device().".css";
 
             // first check if the file exists ##
             if ( $file = helper::get( "theme/sass/".$handle, "return" ) ) {
@@ -227,11 +227,11 @@ class theme extends \q_ui {
             ));
 
             // load site/device.css - re: theme/css/q.1.desktop.js
-            $handle = "q.".\get_current_blog_id().".".\Q::get_device().".js";
+            $handle = "q.".\get_current_blog_id().".".helper::get_device().".js";
 
             if ( ! helper::get( "theme/javascript/".$handle, "return" ) ) {
 
-                $handle = "q.1.".\Q::get_device().".js";
+                $handle = "q.1.".helper::get_device().".js";
 
             }
 
