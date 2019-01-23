@@ -112,11 +112,8 @@ class theme extends \q_ui {
             isset( self::$options->plugin_css ) 
             && false === self::$debug 
         ) {
-
-            // helper::log( 'Adding q.theme.css' );
-
-            // \wp_register_style( 'q-wordpress-css', helper::get( "theme/css/q.global.css", 'return' ), '', self::$plugin_version, 'all' );
-            // \wp_enqueue_style( 'q-wordpress-css' );
+            \wp_register_style( 'q-wordpress-css', helper::get( "theme/css/q.wordpress.css", 'return' ), array(), self::$plugin_version, 'all' );
+            \wp_enqueue_style( 'q-wordpress-css' );
 
             \wp_register_style( 'q-theme-css', helper::get( "theme/css/q.theme.css", 'return' ), array(), self::$plugin_version, 'all' );
             \wp_enqueue_style( 'q-theme-css' );
