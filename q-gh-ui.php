@@ -13,7 +13,7 @@
  * Plugin Name:     Global UI
  * Plugin URI:      http://qstudio.us/
  * Description:     Shared libraries, controllers and UI features
- * Version:         0.1.4
+ * Version:         0.1.5
  * Author:          Q Studio
  * Author URI:      http://qstudio.us
  * License:         GPL2
@@ -38,7 +38,7 @@ if ( ! class_exists( 'q_ui' ) ) {
         private static $instance = null;
 
         // Plugin Settings
-        const version = '0.1.4';
+        const version = '0.1.5';
         const text_domain = 'q-ui'; // for translation ##
         static $debug = false; // controls how js is loaded ##
         static $device; // current device ##

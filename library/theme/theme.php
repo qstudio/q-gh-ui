@@ -84,10 +84,10 @@ class theme extends \q_ui {
 
         // UI / JS / AJAX features ##
         require_once self::get_plugin_path( 'library/controller/modal.php' );
+        require_once self::get_plugin_path( 'library/controller/tab.php' );
         // require_once self::get_plugin_path( 'library/controller/select.php' );
         // require_once self::get_plugin_path( 'library/controller/scroll.php' );
         // require_once self::get_plugin_path( 'library/controller/push.php' );
-        // require_once self::get_plugin_path( 'library/controller/tab.php' );
         // require_once self::get_plugin_path( 'library/controller/filter.php' );
         // require_once self::get_plugin_path( 'library/controller/toggle.php' );
         // require_once self::get_plugin_path( 'library/controller/load.php' );

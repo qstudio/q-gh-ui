@@ -3,7 +3,7 @@
 **Tags:** custom plugin  
 **Requires at least:** 4.9  
 **Tested up to:** 4.9
-**Stable tag:** 0.1.4
+**Stable tag:** 0.1.5
 **License:** GPL  
 
 Global UI library and controllers
