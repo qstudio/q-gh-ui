@@ -390,6 +390,53 @@ class generic extends \q_ui {
 
 
 
+    /** 
+     * Check which consent is given by the user
+     * 
+     * 
+     * */
+    public static function consent( $setting = null )
+    {
+
+        if ( is_null( $setting ) ) {
+
+            // helper::log( 'No setting passed, default to true.' );
+
+            return true;
+
+        }
+
+        if ( 
+            ! class_exists( '\q\consent\core\cookie' )
+        ) {
+
+            // helper::log( 'Consent Class not found, defalt to true' );
+
+            // no ##
+            return true;
+
+        }
+
+        if (
+            ! \q\consent\core\cookie::is_active( $setting ) 
+        ) {
+
+            // helper::log( 'Setting not allowed: '.$setting );
+
+            // no ##
+            return false;
+
+        }
+
+        // helper::log( 'Setting allowed: '.$setting );
+
+        // ok ##
+        return true;
+
+    }
+
+
+
 
     /**
      * Format passed date value
