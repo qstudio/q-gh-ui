@@ -46,7 +46,12 @@ if (typeof Object.assign !== 'function') {
   }
 
 // FINDING AND BINDING
-jQuery( document ).ready( function(){
+jQuery( document ).ready( function($){
+    // sticky header
+    $(window).scrollTop() > $('#sticky-top').height() ? $('#sticky-top').addClass('fixed-top') : $('#sticky-top').removeClass('fixed-top');
+    $(window).on('scroll', function(event) {
+        $(window).scrollTop() > $('#sticky-top').height() ? $('#sticky-top').addClass('fixed-top') : $('#sticky-top').removeClass('fixed-top');
+    });
 
 	// newsletter cancel bound to modal close ##
 	jQuery( 'body' ).on( "click", '.nl-decline', function(e){
